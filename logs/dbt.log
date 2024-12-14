@@ -1,0 +1,206 @@
+[0m21:56:00.337086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000242263F5010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024224470550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024226C46350>]}
+
+
+============================== 21:56:00.352492 | 0a56f403-e07a-4cd3-89ed-b0fb1a256d75 ==============================
+[0m21:56:00.352492 [info ] [MainThread]: Running with dbt=1.9.0
+[0m21:56:00.353433 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ohyon\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:56:29.927558 [debug] [MainThread]: Starter project path: C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\include\starter_project
+[0m21:56:29.952913 [info ] [MainThread]: 
+Your new dbt project "custom_postgres" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:56:29.954309 [info ] [MainThread]: Setting up your profile.
+[0m21:56:47.728663 [error] [MainThread]: Encountered an error:
+DLL load failed while importing _psycopg: The specified module could not be found.
+[0m21:56:47.740955 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\main.py", line 477, in init
+    results = task.run()
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.496.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\postgres\__init__.py", line 4, in <module>
+    from dbt.adapters.postgres.connections import PostgresConnectionManager, PostgresCredentials
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\postgres\connections.py", line 15, in <module>
+    import psycopg2
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\psycopg2\__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+    ...<10 lines>...
+    )
+ImportError: DLL load failed while importing _psycopg: The specified module could not be found.
+
+[0m21:56:47.744028 [debug] [MainThread]: Command `dbt init` failed at 21:56:47.743818 after 47.56 seconds
+[0m21:56:47.744621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024228126D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000242281AB890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000242281F87C0>]}
+[0m21:56:47.745338 [debug] [MainThread]: Flushing usage events
+[0m21:56:48.958388 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:59:15.170908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000180D75F5010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000180D4690550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000180D7E4A350>]}
+
+
+============================== 21:59:15.175062 | 39b4fd89-738f-43ad-8ca4-301e00a4d159 ==============================
+[0m21:59:15.175062 [info ] [MainThread]: Running with dbt=1.9.0
+[0m21:59:15.175949 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ohyon\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:59:25.108293 [error] [MainThread]: Encountered an error:
+
+[0m21:59:25.111924 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\main.py", line 477, in init
+    results = task.run()
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\click\termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\click\termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m21:59:25.114324 [debug] [MainThread]: Command `dbt init` failed at 21:59:25.114180 after 10.07 seconds
+[0m21:59:25.114701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000180D93269E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000180D93ADFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000180D921D9D0>]}
+[0m21:59:25.115098 [debug] [MainThread]: Flushing usage events
+[0m21:59:26.364896 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:00:04.108268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027555BF5010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027552CA4550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027557446350>]}
+
+
+============================== 22:00:04.112133 | 298594a0-630f-4de5-914d-c20fa348ab65 ==============================
+[0m22:00:04.112133 [info ] [MainThread]: Running with dbt=1.9.0
+[0m22:00:04.112742 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\ohyon\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:09.122189 [debug] [MainThread]: Starter project path: C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\include\starter_project
+[0m22:00:09.147416 [info ] [MainThread]: 
+Your new dbt project "custom_postgres" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:00:09.148204 [info ] [MainThread]: Setting up your profile.
+[0m22:00:13.549494 [error] [MainThread]: Encountered an error:
+DLL load failed while importing _psycopg: The specified module could not be found.
+[0m22:00:13.556453 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\cli\main.py", line 477, in init
+    results = task.run()
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\task\init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.496.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\postgres\__init__.py", line 4, in <module>
+    from dbt.adapters.postgres.connections import PostgresConnectionManager, PostgresCredentials
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\dbt\adapters\postgres\connections.py", line 15, in <module>
+    import psycopg2
+  File "C:\Users\ohyon\OneDrive\Desktop\freecodecamp-DE\ELT_clone\dbt-env\Lib\site-packages\psycopg2\__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+    ...<10 lines>...
+    )
+ImportError: DLL load failed while importing _psycopg: The specified module could not be found.
+
+[0m22:00:13.559829 [debug] [MainThread]: Command `dbt init` failed at 22:00:13.559614 after 9.60 seconds
+[0m22:00:13.560423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027557926D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000275579AB890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000275579F47C0>]}
+[0m22:00:13.560897 [debug] [MainThread]: Flushing usage events
+[0m22:00:14.607205 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:13:11.690544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0914eb2ae0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0914f12de0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f09159c4f20>]}
+
+
+============================== 22:13:11.704178 | 74032c58-e2de-4e0b-9b2e-d60acdd72fba ==============================
+[0m22:13:11.704178 [info ] [MainThread]: Running with dbt=1.9.0
+[0m22:13:11.705885 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/ohyx/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:13:11.961836 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object, got 'PosixPath'.. Dictionary: {'dir': PosixPath('/home/ohyx/.dbt')}
+[0m22:13:11.963162 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m22:13:30.322169 [debug] [MainThread]: Starter project path: /mnt/c/Users/ohyon/OneDrive/Desktop/freecodecamp-DE/ELT_clone/dbt-env/lib/python3.12/site-packages/dbt/include/starter_project
+[0m22:13:30.684338 [info ] [MainThread]: 
+Your new dbt project "custom_postgres" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:13:30.685812 [info ] [MainThread]: Setting up your profile.
+[0m22:20:46.071318 [info ] [MainThread]: Profile custom_postgres written to /home/ohyx/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:20:46.076581 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 458.87463, "process_in_blocks": "14672", "process_kernel_time": 0.673242, "process_mem_max_rss": "94088", "process_out_blocks": "8", "process_user_time": 1.326683}
+[0m22:20:46.078481 [debug] [MainThread]: Command `dbt init` succeeded at 22:20:46.078281 after 458.88 seconds
+[0m22:20:46.079689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0914f12de0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f09149eb800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0914a24b30>]}
+[0m22:20:46.080957 [debug] [MainThread]: Flushing usage events
+[0m22:20:47.310251 [debug] [MainThread]: An error was encountered while trying to flush usage events
